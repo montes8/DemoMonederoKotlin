@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">Demo_monedero</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Money</string>
+    <string name="user">Registro de Usuario</string>
 </resources>
