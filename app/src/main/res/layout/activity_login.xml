@@ -41,7 +41,7 @@
         android:layout_below="@+id/text_view_usuario"
         android:ems="10"
         android:drawablePadding="10dp"
-        android:drawableStart="@drawable/ic_user"
+        android:drawableStart="@drawable/ic_action_name"
         android:background="@drawable/fondo_sesion"
         android:inputType="textPersonName"
         />
