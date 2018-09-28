@@ -53,7 +53,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:onClick="btnRegisterUser"
         android:layout_marginTop="70dp"
         android:background="@drawable/fondo_sesion"
         android:ems="8"

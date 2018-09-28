@@ -8,13 +8,19 @@
     android:background="@color/principal_fondo"
     tools:context=".LoginActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:background="@color/colorAccent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.Toolbar>
+
     <TextView
         android:id="@+id/text_sesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="INICIAR SESION"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="120dp"
         android:textStyle="bold"
         android:textColor="@color/titulo"
         android:textSize="25sp"
