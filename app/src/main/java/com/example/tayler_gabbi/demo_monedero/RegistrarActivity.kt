@@ -3,7 +3,8 @@ package com.example.tayler_gabbi.demo_monedero
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import kotlinx.android.synthetic.main.activity_login.*
+import android.util.Log
+import kotlinx.android.synthetic.main.activity_registrar.*
 import org.jetbrains.anko.*
 
 class RegistrarActivity : AppCompatActivity() {
@@ -15,25 +16,59 @@ class RegistrarActivity : AppCompatActivity() {
         setContentView(R.layout.activity_registrar)
     }
 
-    fun logearse(){
-        button_ingresar.setOnClickListener {
+    private fun ajusteToolbar() {
+        setSupportActionBar(toolbar_register)
+        title = " REGISTRATE "
+        toolbar_register.navigationIcon = getDrawable(R.drawable.ic_flecha_back)
+        toolbar_register.setNavigationOnClickListener {
+            onBackPressed()
+        }
+    }
 
-            Thread{
-                val usuario= DemoApplication.database?.usuarioDao()?.userLogin(edit_usuario.text.toString(),edit_pasword.text.toString())
+    private fun registrarUsuario() {
+        button_click_register.setOnClickListener {
 
-                if (usuario!=null){
-                    handler.post {
-                        toast("Bienvenida (o) ${usuario?.nombreUsuario}")
-                        startActivity(intentFor<CategoriaActivity>().newTask().clearTask())
-                    }
+
+            Thread {
+
+                if (edit_text_nombre.text.toString().isEmpty()) {
+
+                    handler.post { toast("ingrese nombre") }
+
+                }else if(edit_text_user.text.toString().isEmpty()){
+                    handler.post { toast("Ingrese nombre de usuario") }
+
+                }else if(edit_password.text.toString().isEmpty()){
+                    handler.post { toast("Ingrese contraseña") }
+
+                }else if(edit_pais.text.toString().isEmpty()){
+                    handler.post { toast("Ingrese pais") }
                 }else {
-                    handler.post {
-                        toast("Usuario o Contraseña Incorrectos")
+                    val usuario = Usuario()
+                    usuario.nombre = edit_text_nombre.text.toString()
+                    usuario.nombreUsuario = edit_text_user.text.toString()
+                    usuario.contrasenia = edit_password.text.toString()
+                    usuario.pais = edit_pais.text.toString()
+
+                    val nuevoId = DemoApplication.database!!.usuarioDao().insert(usuario)
+                    defaultSharedPreferences.edit().putLong("idUsuarioLogeado",nuevoId).apply()
+                    if (nuevoId > 0) {
+                        Log.i("idregistrado", "$nuevoId")
+                        handler.post {
+                            toast("Usuario Registrado")
+                            edit_text_nombre.setText("")
+                            edit_text_user.setText("")
+                            edit_password.setText("")
+                            edit_pais.setText("")
+
+                            startActivity(intentFor<CategoriaActivity>().newTask().clearTask())
+                        }
+                    } else {
+                        handler.post { toast("errorrrr") }
                     }
                 }
             }.start()
 
         }
-
     }
 }
