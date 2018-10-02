@@ -1,9 +1,11 @@
-package com.example.tayler_gabbi.demo_monedero
+package com.example.tayler_gabbi.demo_monedero.view
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
+import com.example.tayler_gabbi.demo_monedero.DemoApplication
+import com.example.tayler_gabbi.demo_monedero.R
 import com.example.tayler_gabbi.demo_monedero.model.Usuario
 import kotlinx.android.synthetic.main.activity_registrar.*
 import org.jetbrains.anko.*

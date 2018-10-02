@@ -1,4 +1,4 @@
-package com.example.tayler_gabbi.demo_monedero
+package com.example.tayler_gabbi.demo_monedero.fragments
 
 
 import android.os.Bundle
@@ -6,14 +6,15 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.tayler_gabbi.demo_monedero.R
 
 
-class IngresosFragment : Fragment() {
+class ConfiguracionFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ingresos, container, false)
+        return inflater.inflate(R.layout.fragment_configuracion, container, false)
     }
 
 

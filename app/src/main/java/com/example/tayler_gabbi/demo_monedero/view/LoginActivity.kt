@@ -1,8 +1,10 @@
-package com.example.tayler_gabbi.demo_monedero
+package com.example.tayler_gabbi.demo_monedero.view
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.tayler_gabbi.demo_monedero.DemoApplication
+import com.example.tayler_gabbi.demo_monedero.R
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.clearTask
 import org.jetbrains.anko.intentFor

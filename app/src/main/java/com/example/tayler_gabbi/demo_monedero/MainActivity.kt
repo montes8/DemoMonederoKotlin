@@ -3,6 +3,8 @@ package com.example.tayler_gabbi.demo_monedero
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.example.tayler_gabbi.demo_monedero.view.LoginActivity
+import com.example.tayler_gabbi.demo_monedero.view.RegistrarActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
