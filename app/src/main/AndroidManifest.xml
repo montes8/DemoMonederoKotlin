@@ -23,7 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".listasView.ListaUsuario" />
-        <activity android:name=".listasView.ListaEgresos"></activity>
+        <activity android:name=".listasView.ListaEgresos" />
+        <activity android:name=".listasView.ListaCategoria"></activity>
     </application>
 
 </manifest>
