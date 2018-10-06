@@ -7,7 +7,7 @@ import android.arch.persistence.room.PrimaryKey
 class Egresos (
 
         @PrimaryKey(autoGenerate = true)
-        var IdEgreso:Int?=null,
+        var IdEgreso:Long?=null,
 
         var categoria:String?="",
 

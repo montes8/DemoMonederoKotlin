@@ -7,7 +7,7 @@ import android.arch.persistence.room.PrimaryKey
 @Entity
 class Ingresos (
         @PrimaryKey(autoGenerate = true)
-        var IdIngreso:Int?=null,
+        var IdIngreso:Long?=null,
 
         var descripcion:String?="",
 
