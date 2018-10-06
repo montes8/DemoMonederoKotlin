@@ -18,8 +18,7 @@ class ConfiguracionFragment : Fragment(), View.OnClickListener {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_configuracion, container, false)
-        miVista = inflater!!.inflate(R.layout.fragment_configuracion, container, false)
+        miVista = inflater.inflate(R.layout.fragment_configuracion, container, false)
 
         val btnCategoria = miVista!!.findViewById<View>(R.id.button_categoria)
         btnCategoria.setOnClickListener(this)
