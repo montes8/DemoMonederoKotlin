@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.tayler_gabbi.demo_monedero.R
+import com.example.tayler_gabbi.demo_monedero.listasView.ListaUsuario
 import com.example.tayler_gabbi.demo_monedero.view.CategoriaActivity
 import org.jetbrains.anko.support.v4.startActivity
 
@@ -32,7 +33,7 @@ class ConfiguracionFragment : Fragment(), View.OnClickListener {
         when (v!!.id) {
             R.id.button_categoria -> startActivity<CategoriaActivity>()
             R.id.ver_categoria -> startActivity<ListaUsuario>()
-           
+
         }
     }
 
