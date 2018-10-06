@@ -13,7 +13,7 @@ class NavegacionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navegacion)
 
-        val tabLayout: TabLayout = findViewById(R.id.tabLayout)
+        val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
         val vPager: ViewPager = findViewById(R.id.viewPager)
         val pAdapter = PageAdapter(supportFragmentManager, tabLayout.tabCount)
         vPager.adapter = pAdapter

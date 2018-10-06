@@ -2,6 +2,7 @@ package com.example.tayler_gabbi.demo_monedero.listasView
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.example.tayler_gabbi.demo_monedero.R
 
 class ListaUsuario : AppCompatActivity() {
 

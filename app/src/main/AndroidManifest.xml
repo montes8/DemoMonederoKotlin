@@ -22,7 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".listasView.ListaUsuario"></activity>
+        <activity android:name=".listasView.ListaUsuario" />
+        <activity android:name=".listasView.ListaEgresos"></activity>
     </application>
 
 </manifest>
