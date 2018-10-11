@@ -30,6 +30,8 @@ import org.jetbrains.anko.support.v4.startActivity
 import org.jetbrains.anko.support.v4.toast
 import org.jetbrains.anko.toast
 import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.concurrent.thread
 
 
 class EgresosFragment : Fragment(), View.OnClickListener {
@@ -131,5 +133,16 @@ class EgresosFragment : Fragment(), View.OnClickListener {
         fecha!!.text = dia.toString()
         messs!!.text = mess.toString()
         anios!!.text = anio.toString()
+    }
+
+    fun listaCategoria () :ArrayList<String>{
+
+        thread {
+
+            val lista = DemoApplication.database!!.
+
+        }
+        return lista
+
     }
 }
