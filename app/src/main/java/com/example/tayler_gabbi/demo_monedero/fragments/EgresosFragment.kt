@@ -24,6 +24,7 @@ import kotlinx.android.synthetic.main.fragment_egresos.*
 import org.jetbrains.anko.clearTask
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.newTask
+import org.jetbrains.anko.support.v4.intentFor
 import org.jetbrains.anko.support.v4.longToast
 import org.jetbrains.anko.support.v4.startActivity
 import org.jetbrains.anko.support.v4.toast
@@ -72,46 +73,51 @@ class EgresosFragment : Fragment(), View.OnClickListener {
         }
     override fun onClick(v: View?) {
         when (v!!.id) {
+
+
+
             R.id.agregar_egreso -> {
-                if (descripcion_gasto.text.toString().isEmpty()) {
 
-                    handler.post { toast("ingrese nombre") }
+                Thread {
+                    if (descripcion_gasto.text.toString().isEmpty()) {
 
-                }else if(monto_gasto.text.toString().isEmpty()){
-                    handler.post { toast("Ingrese nombre de usuario") }
+                        handler.post { toast("ingrese nombre") }
 
-                }else if(fecha_gasto.text.toString().isEmpty()){
-                    handler.post { toast("Ingrese contraseña") }
+                    } else if (monto_gasto.text.toString().isEmpty()) {
+                        handler.post { toast("Ingrese nombre de usuario") }
 
-                }else {
-                    val egresos = Egresos()
-                    egresos.categoria = category.toString()
-                    egresos.descripcion = descripcion_gasto.text.toString()
-                    egresos.monto = monto_gasto.text.toString().toInt()
-                    egresos.dia = fecha_gasto.toString()
-                    egresos.mes = mes_gasto.toString()
-                    egresos.anio = anio_gasto.toString()
+                    } else if (fecha_gasto.text.toString().isEmpty()) {
+                        handler.post { toast("Ingrese contraseña") }
 
-                    val nuevoIdEgreso = DemoApplication.database!!.().insert(egresos)
-                    if (nuevoId > 0) {
-                        Log.i("idregistrado", "$nuevoId")
-                        handler.post {
-                            toast("Usuario Registrado")
-                            edit_text_name.setText("")
-                            edit_text_usuario.setText("")
-                            edit_text_password.setText("")
-
-                            startActivity(intentFor<NavegacionActivity>().newTask().clearTask())
-                        }
                     } else {
-                        handler.post { toast("errorrrr") }
+
+
+                        val egresos = Egresos()
+                        egresos.categoria = category.toString()
+                        egresos.descripcion = descripcion_gasto.text.toString()
+                        egresos.monto = monto_gasto.text.toString().toInt()
+                        egresos.dia = fecha_gasto.toString()
+                        egresos.mes = mes_gasto.toString()
+                        egresos.anio = anio_gasto.toString()
+
+                        val nuevoIdEgreso = DemoApplication.database!!.egresoDao().insert(egresos)
+                        if (nuevoIdEgreso > 0) {
+                            Log.i("idregistrado", "$nuevoIdEgreso")
+                            handler.post {
+                                toast("gasto Registrado")
+                                edit_text_name.setText("")
+                                edit_text_usuario.setText("")
+                                edit_text_password.setText("")
+                            }
+                        } else {
+                            handler.post { toast("errorrrr") }
+                        }
                     }
-                }
-            }.start()
+                }.start()
             }
             R.id.ver_lista_egresos -> {
-                startActivity<ListaEgresos>()
-            }
+            startActivity<ListaEgresos>()
+        }
         }
     }
 
