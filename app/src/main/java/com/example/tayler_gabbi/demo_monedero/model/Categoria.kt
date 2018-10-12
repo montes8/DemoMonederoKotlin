@@ -9,5 +9,5 @@ class Categoria (
         @PrimaryKey(autoGenerate = true)
         var IdCategoria:Long?=null,
 
-        Categoria : String = ""
+        var Categoria : String = ""
 )
