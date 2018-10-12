@@ -16,6 +16,7 @@ import android.widget.TextView
 import com.example.tayler_gabbi.demo_monedero.DemoApplication
 import com.example.tayler_gabbi.demo_monedero.R
 import com.example.tayler_gabbi.demo_monedero.listasView.ListaEgresos
+import com.example.tayler_gabbi.demo_monedero.model.Categoria
 import com.example.tayler_gabbi.demo_monedero.model.Egresos
 import com.example.tayler_gabbi.demo_monedero.model.Usuario
 import com.example.tayler_gabbi.demo_monedero.view.NavegacionActivity
@@ -42,7 +43,7 @@ class EgresosFragment : Fragment(), View.OnClickListener {
     var anios: TextView? = null
     var miVista: View? = null
     var handler : Handler = Handler()
-    var id: Int? = 0
+    lateinit var spiner : Spinner
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -53,18 +54,10 @@ class EgresosFragment : Fragment(), View.OnClickListener {
         val desEgreso = miVista!!.findViewById<View>(R.id.descripcion_gasto)
         val montoEgreso = miVista!!.findViewById<View>(R.id.monto_gasto)
 
-        val spiner = miVista!!.findViewById<View>(R.id.combo_categoria) as Spinner?
-        val adapter = ArrayAdapter<String>(this.context, android.R.layout.simple_spinner_item, listcat)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spiner!!.setAdapter(adapter)
-        spiner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                category = parent!!.getItemAtPosition(position).toString()
-            }
-        }
+        spiner = miVista!!.findViewById<View>(R.id.combo_categoria) as Spinner
+
+        listaCategoria()
+
         val btnEngreso = miVista!!.findViewById<View>(R.id.agregar_egreso)
         mostrarFecha()
         btnEngreso.setOnClickListener(this)
@@ -135,14 +128,23 @@ class EgresosFragment : Fragment(), View.OnClickListener {
         anios!!.text = anio.toString()
     }
 
-    fun listaCategoria () :ArrayList<String>{
+    fun listaCategoria (){
 
         thread {
 
-            val lista = DemoApplication.database!!.
-
+            val lista : ArrayList<Categoria> = DemoApplication.database!!.categoriaDao().listarCategorias()
+            val adapter = ArrayAdapter<Categoria>(this.context, android.R.layout.simple_spinner_item, lista)
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spiner!!.setAdapter(adapter)
+            spiner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                }
+                override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                    category = parent!!.getItemAtPosition(position).toString()
+                }
+            }
         }
-        return lista
 
     }
 }
