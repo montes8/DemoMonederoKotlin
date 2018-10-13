@@ -8,6 +8,11 @@
     android:orientation="vertical"
     android:background="@drawable/fondo_sesion"
     tools:context=".listasView.ListaCategoria">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.Toolbar>
 
     <TextView
         android:layout_width="match_parent"
