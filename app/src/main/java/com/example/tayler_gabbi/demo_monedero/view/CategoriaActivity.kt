@@ -17,6 +17,13 @@ class CategoriaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_categoria)
+
+        setSupportActionBar(toolbar_categoria)
+        toolbar_categoria.navigationIcon = getDrawable(R.drawable.ic_atras)
+        toolbar_categoria.setOnClickListener{
+            onBackPressed()
+        }
+
     }
 
 

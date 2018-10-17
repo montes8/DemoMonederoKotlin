@@ -130,7 +130,7 @@ class EgresosFragment : Fragment(), View.OnClickListener {
 
         thread {
 
-            val lista : ArrayList<Categoria> = DemoApplication.database!!.categoriaDao().listarCategorias()
+            val lista : ArrayList<Categoria> = DemoApplication.database!!.categoriaDao().listarCategorias() as ArrayList<Categoria>
             val adapter = ArrayAdapter<Categoria>(this.context, android.R.layout.simple_spinner_item, lista)
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spiner!!.setAdapter(adapter)

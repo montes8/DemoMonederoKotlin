@@ -8,7 +8,7 @@ import com.example.tayler_gabbi.demo_monedero.model.Usuario
 interface EgresoDao {
 
     @Query("select * from Egresos")
-    fun listarGastos(): List<Usuario>
+    fun listarGastos(): List<Egresos>
 
     @Insert
     fun insert(egreso: Egresos): Long
