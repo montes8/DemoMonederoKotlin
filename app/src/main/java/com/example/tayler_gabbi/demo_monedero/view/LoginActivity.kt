@@ -18,6 +18,11 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        setSupportActionBar(toolbar_login)
+        toolbar_login.navigationIcon = getDrawable(R.drawable.ic_atras)
+        toolbar_login.setOnClickListener{
+            onBackPressed()
+        }
 
         logearse()
     }
