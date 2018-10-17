@@ -69,8 +69,6 @@ class EgresosFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v!!.id) {
 
-
-
             R.id.agregar_egreso -> {
 
                 Thread {

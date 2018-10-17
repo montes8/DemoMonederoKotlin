@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.example.tayler_gabbi.demo_monedero.DemoApplication
 import com.example.tayler_gabbi.demo_monedero.R
+import com.example.tayler_gabbi.demo_monedero.listasView.ListaEgresos
 import com.example.tayler_gabbi.demo_monedero.listasView.ListaIngreso
 import com.example.tayler_gabbi.demo_monedero.model.Egresos
 import com.example.tayler_gabbi.demo_monedero.model.Ingresos
@@ -48,6 +49,9 @@ class IngresosFragment : Fragment(),View.OnClickListener {
         btnIngreso.setOnClickListener(this)
         val btnVerLista=miVista!!.findViewById<View>(R.id.ver_lista_ingresos)
         btnVerLista.setOnClickListener(this)
+
+        return miVista
+
     }
 
     fun mostrarFechaIngreso(){
@@ -77,24 +81,24 @@ class IngresosFragment : Fragment(),View.OnClickListener {
                     ingreso.monto = monto_ingreso.text.toString().toInt()
                     ingreso.dia=edit_fecha_ingreso.text.toString()
                     ingreso.mes = edit_mes_ingreso.text.toString()
-                    ingreso.anio = edit_anio_ingreso.text.toString())
+                    ingreso.anio = edit_anio_ingreso.text.toString()
                     if (descripcion_ingreso.text.toString().isEmpty()) {
 
-                        handler.post { toast("ingrese nombre") }
+                        handler.post { toast("ingrese descripcion") }
 
                     } else if (monto_ingreso.text.toString().isEmpty()) {
-                        handler.post { toast("Ingrese nombre de usuario") }
+                        handler.post { toast("Ingrese monto") }
 
                     } else if (edit_fecha_ingreso.text.toString().isEmpty()) {
-                        handler.post { toast("Ingrese contraseña") }
+                        handler.post { toast("Ingrese fecha") }
 
                     } else {
 
-                        val nuevoIngreso = DemoApplication.database!!.().insert(ingreso)
-                        if (nuevoIdEgreso > 0) {
-                            Log.i("idregistrado", "$nuevoIdEgreso")
+                        val nuevoIngreso = DemoApplication.database!!.ingresoDao().insert(ingreso)
+                        if (nuevoIngreso > 0) {
+                            Log.i("idregistrado", "$nuevoIngreso")
                             handler.post {
-                                toast("gasto Registrado")
+                                toast("Ingreso Registrado")
                                 edit_text_name.setText("")
                                 edit_text_usuario.setText("")
                                 edit_text_password.setText("")
@@ -107,7 +111,8 @@ class IngresosFragment : Fragment(),View.OnClickListener {
 
             }
 
-            R.id.ver_lista_ingresos ->{startActivity<ListaIngreso>()}
+            R.id.ver_lista_ingresos -> {
+            }
         }
     }
 
