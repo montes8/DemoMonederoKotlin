@@ -4,6 +4,7 @@ import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase
 import com.example.tayler_gabbi.demo_monedero.database.dao.CategoriaDao
 import com.example.tayler_gabbi.demo_monedero.database.dao.EgresoDao
+import com.example.tayler_gabbi.demo_monedero.database.dao.IngresoDao
 import com.example.tayler_gabbi.demo_monedero.database.dao.UsuarioDao
 import com.example.tayler_gabbi.demo_monedero.model.Categoria
 import com.example.tayler_gabbi.demo_monedero.model.Egresos
@@ -16,6 +17,7 @@ abstract class DataBase :RoomDatabase(){
 
     abstract fun usuarioDao() : UsuarioDao
     abstract fun egresoDao() : EgresoDao
+    abstract fun ingresoDao() : IngresoDao
     abstract fun categoriaDao() : CategoriaDao
 
 }
