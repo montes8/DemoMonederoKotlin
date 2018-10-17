@@ -24,7 +24,8 @@
         </activity>
         <activity android:name=".listasView.ListaUsuario" />
         <activity android:name=".listasView.ListaEgresos" />
-        <activity android:name=".listasView.ListaCategoria"></activity>
+        <activity android:name=".listasView.ListaCategoria" />
+        <activity android:name=".listasView.ListaIngresos"></activity>
     </application>
 
 </manifest>

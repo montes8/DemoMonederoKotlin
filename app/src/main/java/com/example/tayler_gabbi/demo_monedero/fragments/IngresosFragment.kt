@@ -1,7 +1,6 @@
 package com.example.tayler_gabbi.demo_monedero.fragments
 
 
-import android.content.ContentValues
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.app.Fragment
@@ -12,15 +11,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.example.tayler_gabbi.demo_monedero.DemoApplication
 import com.example.tayler_gabbi.demo_monedero.R
-import com.example.tayler_gabbi.demo_monedero.listasView.ListaEgresos
-import com.example.tayler_gabbi.demo_monedero.listasView.ListaIngreso
-import com.example.tayler_gabbi.demo_monedero.model.Egresos
 import com.example.tayler_gabbi.demo_monedero.model.Ingresos
 import kotlinx.android.synthetic.main.activity_registrar.*
-import kotlinx.android.synthetic.main.fragment_egresos.*
 import kotlinx.android.synthetic.main.fragment_ingresos.*
-import org.jetbrains.anko.support.v4.longToast
-import org.jetbrains.anko.support.v4.startActivity
 import org.jetbrains.anko.support.v4.toast
 import java.util.*
 
