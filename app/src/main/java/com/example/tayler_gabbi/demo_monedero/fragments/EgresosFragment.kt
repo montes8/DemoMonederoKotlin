@@ -112,7 +112,7 @@ class EgresosFragment : Fragment(), View.OnClickListener {
             }
             R.id.ver_lista_egresos -> {
             startActivity<ListaEgresos>()
-        }
+          }
         }
     }
 
