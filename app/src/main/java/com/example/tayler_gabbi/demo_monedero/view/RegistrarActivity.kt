@@ -17,6 +17,9 @@ class RegistrarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrar)
+
+        ajusteToolbar()
+        registrarUsuario()
     }
 
     private fun ajusteToolbar() {
