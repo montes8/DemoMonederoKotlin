@@ -4,10 +4,10 @@ import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 
 @Entity
-class Categoria (
+data class Categoria (
 
         @PrimaryKey(autoGenerate = true)
-        var IdCategoria:Long?=null,
+        var IdCategoria:Long?= null,
 
         var Categoria : String = ""
 )

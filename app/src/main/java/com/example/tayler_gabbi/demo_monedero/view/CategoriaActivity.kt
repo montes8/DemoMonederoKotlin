@@ -3,6 +3,7 @@ package com.example.tayler_gabbi.demo_monedero.view
 import android.content.ContentValues
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.widget.Toast
 import com.example.tayler_gabbi.demo_monedero.DemoApplication
@@ -13,6 +14,8 @@ import kotlinx.android.synthetic.main.activity_categoria.*
 import org.jetbrains.anko.startActivity
 
 class CategoriaActivity : AppCompatActivity() {
+
+    var handler : Handler = Handler()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,18 +32,30 @@ class CategoriaActivity : AppCompatActivity() {
 
     fun btnAgregarCategoria(view: View) {
 
-        val categoria = Categoria()
-        categoria.Categoria=edit_text_categoria.text.toString()
+        Thread{
+
+            val categoria = Categoria()
+            categoria.Categoria=edit_text_categoria.text.toString()
 
 
             val ID = DemoApplication.database!!.categoriaDao().insert(categoria)
             if (ID > 0) {
-                Toast.makeText(this, "Categoria agregada correctamente", Toast.LENGTH_LONG).show()
-                startActivity<ListaCategoria>()
-                finish()
+
+                handler.post {
+                    Toast.makeText(this, "Categoria agregada correctamente", Toast.LENGTH_LONG).show()
+                    startActivity<ListaCategoria>()
+                    finish()
+                }
+
             } else {
-                Toast.makeText(this, "Lo siento la categoria no se agrego correctamente ,por favor intentalo de nuevo", Toast.LENGTH_LONG).show()
+                handler.post {
+                    Toast.makeText(this, "Lo siento la categoria no se agrego correctamente ,por favor intentalo de nuevo", Toast.LENGTH_LONG).show()
+                }
+
             }
+        }.start()
+
+
 
 
     }
