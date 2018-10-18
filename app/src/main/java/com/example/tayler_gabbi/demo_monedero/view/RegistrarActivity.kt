@@ -25,7 +25,7 @@ class RegistrarActivity : AppCompatActivity() {
     private fun ajusteToolbar() {
         setSupportActionBar(toolbar_register)
         title = " REGISTRATE "
-        toolbar_register.navigationIcon = getDrawable(R.drawable.ic_flecha_back)
+        toolbar_register.navigationIcon = getDrawable(R.drawable.ic_atras)
         toolbar_register.setNavigationOnClickListener {
             onBackPressed()
         }
