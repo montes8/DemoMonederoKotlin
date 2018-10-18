@@ -11,12 +11,14 @@ class ListaCategoria : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_categoria)
 
+        ajusteToolbar()
 
     }
 
     fun ajusteToolbar(){
 
         setSupportActionBar(toolbar_lista_categoria)
+        toolbar_lista_categoria.title = "LISTA DE CATEGORIAS"
         toolbar_lista_categoria.navigationIcon = getDrawable(R.drawable.ic_atras)
         toolbar_lista_categoria.setOnClickListener{
             onBackPressed()
