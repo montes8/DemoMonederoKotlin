@@ -88,7 +88,7 @@ class EgresosFragment : Fragment(), View.OnClickListener {
                         val egresos = Egresos()
                         egresos.categoria = category.toString()
                         egresos.descripcion = descripcion_gasto.text.toString()
-                        egresos.monto = monto_gasto.text.toString().toInt()
+                        egresos.monto = monto_gasto.text.toString().toDouble()
                         egresos.dia = fecha_gasto.toString()
                         egresos.mes = mes_gasto.toString()
                         egresos.anio = anio_gasto.toString()
@@ -131,7 +131,7 @@ class EgresosFragment : Fragment(), View.OnClickListener {
         thread {
 
             val listCategoria = ArrayList<String>()
-            val lista: ArrayList<Categoria> = DemoApplication.database!!.categoriaDao().listarCategorias()
+            val lista: ArrayList<Categoria> = DemoApplication.database!!.categoriaDao().listarCategorias() as ArrayList<Categoria>
             lista.forEach {
                 listCategoria.add(it.Categoria)
             }

@@ -13,7 +13,7 @@ class Egresos (
 
         var descripcion:String?="",
 
-        var monto:Int?=0,
+        var monto:Double?=0.0,
 
         var dia:String?="",
 
