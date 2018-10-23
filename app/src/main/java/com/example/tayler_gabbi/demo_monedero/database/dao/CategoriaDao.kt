@@ -9,7 +9,7 @@ import com.example.tayler_gabbi.demo_monedero.model.Usuario
 interface CategoriaDao {
 
     @Query("select * from Categoria")
-    fun listarCategorias(): List<Categoria>
+    fun listarCategorias(): ArrayList<Categoria>
 
     @Insert
     fun insert(categoria: Categoria): Long
