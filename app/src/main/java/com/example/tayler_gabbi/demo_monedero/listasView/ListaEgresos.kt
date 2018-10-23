@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
 import com.example.tayler_gabbi.demo_monedero.R
+import kotlinx.android.synthetic.main.activity_lista_egresos.*
 import kotlinx.android.synthetic.main.fragment_egresos.*
 import org.jetbrains.anko.support.v4.longToast
 import org.jetbrains.anko.support.v4.startActivity
@@ -19,5 +20,9 @@ class ListaEgresos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_egresos)
-            }
+
+        setSupportActionBar(toolbar_gastos)
+        toolbar_gastos.title = "Lista de Gastos"
+
+    }
 }
