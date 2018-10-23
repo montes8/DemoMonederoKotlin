@@ -6,12 +6,15 @@ import android.support.design.widget.TabLayout
 import android.support.v4.view.ViewPager
 import com.example.tayler_gabbi.demo_monedero.R
 import com.example.tayler_gabbi.demo_monedero.adapters.PageAdapter
+import kotlinx.android.synthetic.main.activity_navegacion.*
 
 class NavegacionActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navegacion)
+        setSupportActionBar(toolbar_navigation)
+        toolbar_navigation.title = "MONEDERO"
 
         val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
         val vPager: ViewPager = findViewById(R.id.viewPager)

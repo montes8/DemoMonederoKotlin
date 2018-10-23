@@ -48,6 +48,8 @@ class EgresosFragment : Fragment(), View.OnClickListener {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         miVista = inflater.inflate(R.layout.fragment_egresos, container, false)
+
+
         fecha = miVista!!.findViewById<View>(R.id.fecha_gasto) as TextView
         messs = miVista!!.findViewById<View>(R.id.mes_gasto) as TextView
         anios = miVista!!.findViewById<View>(R.id.anio_gasto) as TextView

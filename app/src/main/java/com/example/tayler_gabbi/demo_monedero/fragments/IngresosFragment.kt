@@ -32,6 +32,8 @@ class IngresosFragment : Fragment(),View.OnClickListener {
         // Inflate the layout for this fragment
         miVista = inflater.inflate(R.layout.fragment_ingresos, container, false)
 
+
+
         fechaIngreso = miVista!!.findViewById<View>(R.id.edit_fecha_ingreso) as TextView?
         mesi = miVista!!.findViewById<View>(R.id.edit_mes_ingreso) as TextView?
         aniosi = miVista!!.findViewById<View>(R.id.edit_anio_ingreso) as TextView?
