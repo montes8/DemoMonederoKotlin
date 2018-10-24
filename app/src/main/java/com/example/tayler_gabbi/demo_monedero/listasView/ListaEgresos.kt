@@ -22,7 +22,7 @@ class ListaEgresos : AppCompatActivity() {
         setContentView(R.layout.activity_lista_egresos)
 
         setSupportActionBar(toolbar_gastos)
-        toolbar_gastos.title = "Lista de Gastos"
+        title = "Lista de Gastos"
 
     }
 }

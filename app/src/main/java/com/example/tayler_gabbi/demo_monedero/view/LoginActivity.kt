@@ -18,20 +18,24 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+
+        logearse()
+    }
+
+    fun ajusteToolbarLogin(){
+
         setSupportActionBar(toolbar_login)
         toolbar_login.navigationIcon = getDrawable(R.drawable.ic_atras)
         toolbar_login.setOnClickListener{
             onBackPressed()
         }
-
-        logearse()
     }
-
     fun logearse(){
         button_ingresar.setOnClickListener {
 
             Thread{
-                val usuario= DemoApplication.database?.usuarioDao()?.userLogin(edit_usuario.text.toString(),edit_pasword.text.toString())
+                val usuario= DemoApplication.database!!.usuarioDao().userLogin(edit_usuario.text.toString(),edit_pasword.text.toString())
 
                 if (usuario!=null){
                     handler.post {

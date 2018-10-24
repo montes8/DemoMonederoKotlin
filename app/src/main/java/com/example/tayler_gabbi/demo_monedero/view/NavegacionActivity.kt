@@ -14,7 +14,7 @@ class NavegacionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navegacion)
         setSupportActionBar(toolbar_navigation)
-        toolbar_navigation.title = "MONEDERO"
+        title = "MONEDERO"
 
         val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
         val vPager: ViewPager = findViewById(R.id.viewPager)
