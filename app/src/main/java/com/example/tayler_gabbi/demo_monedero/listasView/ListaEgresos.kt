@@ -21,8 +21,18 @@ class ListaEgresos : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_egresos)
 
+        ajustarToolbarGastos()
+
+
+    }
+
+    fun ajustarToolbarGastos(){
         setSupportActionBar(toolbar_gastos)
         title = "Lista de Gastos"
+        toolbar_gastos.navigationIcon = getDrawable(R.drawable.ic_atras)
+        toolbar_gastos.setOnClickListener{
+            onBackPressed()
+        }
 
     }
 }
