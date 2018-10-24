@@ -21,12 +21,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ListView
-        android:id="@+id/list_view"
-        android:layout_marginTop="20dp"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lista_categoria"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </ListView>
+        android:layout_height="match_parent"
+        tools:itemCount="5"
+        android:background="@drawable/fondo_recyclerview"
+        tools:listitem="@layout/molde_historial_pedido" />
 
 </LinearLayout>
