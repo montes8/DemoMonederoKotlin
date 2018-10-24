@@ -26,7 +26,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:itemCount="5"
-        android:background="@drawable/fondo_recyclerview"
-        tools:listitem="@layout/molde_historial_pedido" />
+        tools:listitem="@layout/molde_categoria" />
 
 </LinearLayout>
