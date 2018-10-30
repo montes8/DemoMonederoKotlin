@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-
+        ajusteToolbarLogin()
         logearse()
     }
 
