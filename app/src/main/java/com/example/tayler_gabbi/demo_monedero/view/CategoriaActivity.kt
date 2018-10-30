@@ -43,7 +43,6 @@ class CategoriaActivity : AppCompatActivity() {
 
                 handler.post {
                     Toast.makeText(this, "Categoria agregada correctamente", Toast.LENGTH_LONG).show()
-                    startActivity<ListaCategoria>()
                     finish()
                 }
 
