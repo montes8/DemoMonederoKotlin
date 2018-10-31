@@ -8,7 +8,7 @@ import com.example.tayler_gabbi.demo_monedero.R
 import com.example.tayler_gabbi.demo_monedero.model.Categoria
 import kotlinx.android.synthetic.main.molde_categoria.view.*
 
-class AdapterCategoria : RecyclerView.Adapter<AdapterCategoria.CategoriaViewHolder>(){
+class AdapterCategoria ( val onClickEditar : ((Categoria) -> Unit)? = null, val onClickEliminar : ((Categoria) -> Unit)? = null ): RecyclerView.Adapter<AdapterCategoria.CategoriaViewHolder>(){
 
     private var categorias : List<Categoria>? = null
 
