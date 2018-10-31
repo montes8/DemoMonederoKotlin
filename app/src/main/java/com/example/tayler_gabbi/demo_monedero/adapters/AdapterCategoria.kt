@@ -31,13 +31,27 @@ class AdapterCategoria ( val onClickEditar : ((Categoria) -> Unit)? = null, val 
     }
 
     override fun onBindViewHolder(holder: CategoriaViewHolder, position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+       val categoria = categorias!![position]
+
+        holder.nombreCategoria.text = categoria.Categoria
+
+        holder.editarCategoria.setOnClickListener{
+
+            onClickEditar?.invoke(categoria)
+        }
+
+        holder.eliminarcategoria.setOnClickListener {
+
+            onClickEliminar?.invoke(categoria)
+        }
+
+
     }
 
 
     class CategoriaViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
 
-        val categoria = itemView.text_view_categoria
+        val nombreCategoria = itemView.text_view_categoria
         val eliminarcategoria = itemView.image_delete_categoria
         val editarCategoria = itemView.image_edit_categoria
 
