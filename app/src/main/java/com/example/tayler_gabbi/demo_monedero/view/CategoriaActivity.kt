@@ -23,7 +23,7 @@ class CategoriaActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar_categoria)
         toolbar_categoria.navigationIcon = getDrawable(R.drawable.ic_atras)
-        toolbar_categoria.setOnClickListener{
+        toolbar_categoria.setNavigationOnClickListener{
             onBackPressed()
         }
 

@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.tayler_gabbi.demo_monedero.R
 import kotlinx.android.synthetic.main.activity_lista_ingresos.*
+import kotlinx.android.synthetic.main.activity_lista_usuario.*
 
 class ListaUsuario : AppCompatActivity() {
 
@@ -16,10 +17,10 @@ class ListaUsuario : AppCompatActivity() {
 
 
     fun ajustarToolbarUsuario(){
-        setSupportActionBar(toolbar_ingreso)
+        setSupportActionBar(toolbar_usuario)
         title = "Lista de Ingresos"
-        toolbar_ingreso.navigationIcon = getDrawable(R.drawable.ic_atras)
-        toolbar_ingreso.setOnClickListener{
+        toolbar_usuario.navigationIcon = getDrawable(R.drawable.ic_atras)
+        toolbar_usuario.setNavigationOnClickListener{
             onBackPressed()
         }
 

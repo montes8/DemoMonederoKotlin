@@ -24,8 +24,12 @@ class ConfiguracionFragment : Fragment(), View.OnClickListener {
 
         val btnCategoria = miVista!!.findViewById<View>(R.id.button_categoria)
         btnCategoria.setOnClickListener(this)
+
         val btnVerCategoria = miVista!!.findViewById<View>(R.id.ver_categoria)
         btnVerCategoria.setOnClickListener(this)
+
+        val btnVerListaUsuario = miVista!!.findViewById<View>(R.id.ver_usuarios)
+        btnVerListaUsuario.setOnClickListener(this)
 
 
         return miVista

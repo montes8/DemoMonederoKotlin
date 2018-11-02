@@ -43,7 +43,7 @@ class ListaCategoria : AppCompatActivity() {
         setSupportActionBar(toolbar_lista_categoria)
         toolbar_lista_categoria.title = "LISTA DE CATEGORIAS"
         toolbar_lista_categoria.navigationIcon = getDrawable(R.drawable.ic_atras)
-        toolbar_lista_categoria.setOnClickListener{
+        toolbar_lista_categoria.setNavigationOnClickListener{
             onBackPressed()
         }
     }
