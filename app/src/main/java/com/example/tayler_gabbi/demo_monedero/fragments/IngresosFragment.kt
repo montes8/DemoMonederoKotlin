@@ -11,9 +11,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.example.tayler_gabbi.demo_monedero.DemoApplication
 import com.example.tayler_gabbi.demo_monedero.R
+import com.example.tayler_gabbi.demo_monedero.listasView.ListaIngresos
 import com.example.tayler_gabbi.demo_monedero.model.Ingresos
 import kotlinx.android.synthetic.main.activity_registrar.*
 import kotlinx.android.synthetic.main.fragment_ingresos.*
+import org.jetbrains.anko.support.v4.startActivity
 import org.jetbrains.anko.support.v4.toast
 import java.util.*
 
@@ -41,6 +43,7 @@ class IngresosFragment : Fragment(),View.OnClickListener {
         val textMonto=miVista!!.findViewById<View>(R.id.monto_ingreso)
         val btnIngreso=miVista!!.findViewById<View>(R.id.agregar_ingreso)
         mostrarFechaIngreso()
+
         btnIngreso.setOnClickListener(this)
         val btnVerLista=miVista!!.findViewById<View>(R.id.ver_lista_ingresos)
         btnVerLista.setOnClickListener(this)
@@ -107,6 +110,7 @@ class IngresosFragment : Fragment(),View.OnClickListener {
             }
 
             R.id.ver_lista_ingresos -> {
+                startActivity<ListaIngresos>()
             }
         }
     }
