@@ -97,9 +97,8 @@ class IngresosFragment : Fragment(),View.OnClickListener {
                             Log.i("idregistrado", "$nuevoIngreso")
                             handler.post {
                                 toast("Ingreso Registrado")
-                                edit_text_name.setText("")
-                                edit_text_usuario.setText("")
-                                edit_text_password.setText("")
+                                descripcion_ingreso.setText("")
+                                monto_ingreso.setText("")
                             }
                         } else {
                             handler.post { toast("errorrrr") }
