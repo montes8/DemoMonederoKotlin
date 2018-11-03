@@ -80,29 +80,26 @@ class IngresosFragment : Fragment(),View.OnClickListener {
                     ingreso.dia=edit_fecha_ingreso.text.toString()
                     ingreso.mes = edit_mes_ingreso.text.toString()
                     ingreso.anio = edit_anio_ingreso.text.toString()
+                    val nuevoIngreso = DemoApplication.database!!.ingresoDao().insert(ingreso)
+
+
                     if (descripcion_ingreso.text.toString().isEmpty()) {
 
                         handler.post { toast("ingrese descripcion") }
 
-                    } else if (monto_ingreso.text.toString().isEmpty()) {
+                    } else if (monto_ingreso.text.toString().toInt() == 0) {
                         handler.post { toast("Ingrese monto") }
 
-                    } else if (edit_fecha_ingreso.text.toString().isEmpty()) {
-                        handler.post { toast("Ingrese fecha") }
-
-                    } else {
-
-                        val nuevoIngreso = DemoApplication.database!!.ingresoDao().insert(ingreso)
-                        if (nuevoIngreso > 0) {
-                            Log.i("idregistrado", "$nuevoIngreso")
+                    }else if (nuevoIngreso > 0){
+                        Log.i("idregistrado", "$nuevoIngreso")
                             handler.post {
                                 toast("Ingreso Registrado")
                                 descripcion_ingreso.setText("")
                                 monto_ingreso.setText("")
+
                             }
-                        } else {
-                            handler.post { toast("errorrrr") }
-                        }
+                    } else {
+                        handler.post { toast("errorrrr") }
                     }
                 }.start()
 
