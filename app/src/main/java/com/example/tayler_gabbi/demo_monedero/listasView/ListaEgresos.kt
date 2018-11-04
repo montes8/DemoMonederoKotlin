@@ -56,7 +56,7 @@ class ListaEgresos : AppCompatActivity() {
         setSupportActionBar(toolbar_gastos)
         title = "Lista de Gastos"
         toolbar_gastos.navigationIcon = getDrawable(R.drawable.ic_atras)
-        toolbar_gastos.setOnClickListener{
+        toolbar_gastos.setNavigationOnClickListener{
             onBackPressed()
         }
 
