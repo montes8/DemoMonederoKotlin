@@ -37,8 +37,8 @@ class ListaEgresos : AppCompatActivity() {
 
         gastoAdapter = AdapterEgreso()
 
-        lista_categoria.layoutManager = LinearLayoutManager(this)
-        lista_categoria.adapter = gastoAdapter
+        lista_egreso.layoutManager = LinearLayoutManager(this)
+        lista_egreso.adapter = gastoAdapter
 
         thread(start = true){
             val lista = DemoApplication.database!!.egresoDao().listarGastos()
