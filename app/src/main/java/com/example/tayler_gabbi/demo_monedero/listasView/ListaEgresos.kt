@@ -17,6 +17,7 @@ import com.example.tayler_gabbi.demo_monedero.adapters.AdapterEgreso
 import com.example.tayler_gabbi.demo_monedero.adapters.AdapterIngreso
 import kotlinx.android.synthetic.main.activity_lista_categoria.*
 import kotlinx.android.synthetic.main.activity_lista_egresos.*
+import kotlinx.android.synthetic.main.activity_lista_ingresos.*
 import kotlinx.android.synthetic.main.fragment_egresos.*
 import org.jetbrains.anko.support.v4.longToast
 import org.jetbrains.anko.support.v4.startActivity

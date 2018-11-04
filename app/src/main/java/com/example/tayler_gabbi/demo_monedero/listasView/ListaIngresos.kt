@@ -28,8 +28,8 @@ class ListaIngresos : AppCompatActivity() {
 
         adapterIngreso = AdapterIngreso()
 
-        lista_categoria.layoutManager = LinearLayoutManager(this)
-        lista_categoria.adapter = adapterIngreso
+        lista_ingreso.layoutManager = LinearLayoutManager(this)
+        lista_ingreso.adapter = adapterIngreso
 
         thread(start = true){
             val lista = DemoApplication.database!!.ingresoDao().listarIngresos()
@@ -43,10 +43,10 @@ class ListaIngresos : AppCompatActivity() {
     }
 
     fun ajustarToolbarIngreso(){
-        setSupportActionBar(toolbar_usuario)
+        setSupportActionBar(toolbar_ingreso)
         title = "Lista de Ingresos"
-        toolbar_usuario.navigationIcon = getDrawable(R.drawable.ic_atras)
-        toolbar_usuario.setOnClickListener{
+        toolbar_ingreso.navigationIcon = getDrawable(R.drawable.ic_atras)
+        toolbar_ingreso.setNavigationOnClickListener{
             onBackPressed()
         }
 

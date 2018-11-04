@@ -76,7 +76,7 @@ class EgresosFragment : Fragment(), View.OnClickListener {
                 Thread {
                     if (descripcion_gasto.text.toString().isEmpty()) {
 
-                        handler.post { toast("ingrese nombre") }
+                        handler.post { toast("ingrese descripcion") }
 
                     } else if (monto_gasto.text.toString().isEmpty()) {
                         handler.post { toast("Ingrese nombre de usuario") }
