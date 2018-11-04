@@ -100,9 +100,8 @@ class EgresosFragment : Fragment(), View.OnClickListener {
                             Log.i("idregistrado", "$nuevoIdEgreso")
                             handler.post {
                                 toast("gasto Registrado")
-                                edit_text_name.setText("")
-                                edit_text_usuario.setText("")
-                                edit_text_password.setText("")
+                                descripcion_gasto.setText("")
+                                monto_gasto.setText("")
                             }
                         } else {
                             handler.post { toast("errorrrr") }
