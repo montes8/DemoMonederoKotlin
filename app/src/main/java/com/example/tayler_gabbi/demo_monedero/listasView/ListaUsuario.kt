@@ -26,8 +26,8 @@ class ListaUsuario : AppCompatActivity() {
 
         usuarioAdapter = AdapterUsuario()
 
-        lista_categoria.layoutManager = LinearLayoutManager(this)
-        lista_categoria.adapter = usuarioAdapter
+        lista_usuario.layoutManager = LinearLayoutManager(this)
+        lista_usuario.adapter = usuarioAdapter
 
         thread(start = true){
             val lista = DemoApplication.database!!.usuarioDao().listarUsuario()
