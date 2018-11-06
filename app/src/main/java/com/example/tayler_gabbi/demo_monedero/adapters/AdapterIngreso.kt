@@ -21,7 +21,7 @@ class AdapterIngreso (  val onClickEliminarIngreso : ((Ingresos) -> Unit)? = nul
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IngresoViewHolder {
-        val view : View = LayoutInflater.from(parent.context).inflate(R.layout.molde_lista_gasto,parent,false)
+        val view : View = LayoutInflater.from(parent.context).inflate(R.layout.model_lista,parent,false)
         return IngresoViewHolder(view)
     }
 
