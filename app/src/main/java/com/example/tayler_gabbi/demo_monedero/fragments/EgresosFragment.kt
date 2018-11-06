@@ -91,9 +91,9 @@ class EgresosFragment : Fragment(), View.OnClickListener {
                         egresos.categoria = category.toString()
                         egresos.descripcion = descripcion_gasto.text.toString()
                         egresos.monto = monto_gasto.text.toString().toDouble()
-                        egresos.dia = fecha_gasto.toString()
-                        egresos.mes = mes_gasto.toString()
-                        egresos.anio = anio_gasto.toString()
+                        egresos.dia = fecha_gasto.text.toString()
+                        egresos.mes = mes_gasto.text.toString()
+                        egresos.anio = anio_gasto.text.toString()
 
                         val nuevoIdEgreso = DemoApplication.database!!.egresoDao().insert(egresos)
                         if (nuevoIdEgreso > 0) {
