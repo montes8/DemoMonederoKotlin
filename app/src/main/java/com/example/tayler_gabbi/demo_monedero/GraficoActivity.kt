@@ -4,10 +4,12 @@ import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.components.AxisBase
 import com.github.mikephil.charting.components.LimitLine
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
+import com.github.mikephil.charting.formatter.IAxisValueFormatter
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 
 class GraficoActivity : AppCompatActivity() {
@@ -77,5 +79,28 @@ class GraficoActivity : AppCompatActivity() {
         dataSet.add(linea2)
         val datas: LineData = LineData(dataSet)
         chart.data=datas
+
+
+    //AGREGAMOS
+    val values:ArrayList<String> = ArrayList()
+    values.add("Enero")
+    values.add("Febrero")
+    values.add("Marzo")
+    values.add("Abril")
+    values.add("Mayo")
+    val xAxis=chart.xAxis
+    xAxis.valueFormatter = MiAxis(values)
+
+}
+
+
+class MiAxis(values: ArrayList<String>) : IAxisValueFormatter {
+    var mvalues:ArrayList<String> = values
+
+    override fun getFormattedValue(value: Float, axis: AxisBase?): String {
+
+        return mvalues[value.toInt()]
     }
+
+}
 }
